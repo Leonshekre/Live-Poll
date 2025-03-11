@@ -1,104 +1,59 @@
-import React, { Component, ChangeEvent, MouseEvent } from "react";
-import { isRecord } from './record';
+import React, { Component } from "react"; // ChangeEvent, MouseEvent
+import { ViewPollListPage } from './ViewPollListPage'; 
+import { NewPollPage } from './NewPollPage'; 
+import { ViewCurrentPollPage } from './ViewCurrentPollPage'; 
 
+const DEBUG: boolean = true;
 
-// TODO: When you're ready to get started, you can remove all the code below and
-// start with this blank application:
-//
-// type PollsAppState = {
-// }
-// 
-// /** Displays the UI of the Polls application. */
-// export class PollsApp extends Component<{}, PollsAppState> {
-// 
-//   constructor(props: {}) {
-//     super(props);
-// 
-//     this.state = {};
-//   }
-//   
-//   render = (): JSX.Element => {
-//     return <div></div>;
-//   };
-// }
-
+// Indicates which page to show. If it is the ViewCurrentPollPage, also has a string to
+// find the poll with the given questionName in the server
+type Page = "ViewPollListPage" | "NewPollPage" | {kind: "ViewCurrentPollPage", pollQuestionName: string};
 
 type PollsAppState = {
-  name: string;  // mirror state of name input box
-  msg: string;   // essage sent from server
+  currPage: Page;
 }
-
 
 /** Displays the UI of the Polls application. */
 export class PollsApp extends Component<{}, PollsAppState> {
 
   constructor(props: {}) {
     super(props);
-
-    this.state = {name: "", msg: ""};
+    this.state = {currPage: "ViewPollListPage"};
   }
   
+
+
   render = (): JSX.Element => {
-    return (<div>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" value={this.state.name}
-                 onChange={this.doNameChange}></input>
-          <button onClick={this.doDummyClick}>Dummy</button>
-        </div>
-        {this.renderMessage()}
-      </div>);
-  };
+    if (DEBUG) console.log(JSON.stringify(this.state));
 
-  renderMessage = (): JSX.Element => {
-    if (this.state.msg === "") {
-      return <div></div>;
+    if (this.state.currPage === "ViewPollListPage") {
+      return <ViewPollListPage onNewPollClick={this.doNewPollClick} onRedirectToCurrPollClick={this.doRedirectToCurrPollClick}/>;
+    } else if (this.state.currPage === "NewPollPage") {
+      return <NewPollPage onBackClick={this.doBackClick} onRedirectToCurrPollClick={this.doRedirectToCurrPollClick}/>
     } else {
-      return <p>Server says: {this.state.msg}</p>;
+      return <ViewCurrentPollPage onBackClick={this.doBackClick} pollQuestionName={this.state.currPage.pollQuestionName}/>
     }
   };
 
-  doNameChange = (evt: ChangeEvent<HTMLInputElement>): void => {
-    this.setState({name: evt.target.value, msg: ""});
+
+  ////// REDIRECTS
+  doNewPollClick = (): void => {
+    this.setState({currPage: "NewPollPage"});
   };
 
-  doDummyClick = (_evt: MouseEvent<HTMLButtonElement>): void => {
-    const name = this.state.name.trim();
-    if (name.length > 0) {
-      const url = "/api/dummy?name=" + encodeURIComponent(name);
-      fetch(url).then(this.doDummyResp)
-          .catch(() => this.doDummyError("failed to connect to server"));
-    }
+  doBackClick = (): void => {
+    this.setState({currPage: "ViewPollListPage"});
   };
 
-  doDummyResp = (res: Response): void => {
-    if (res.status === 200) {
-      res.json().then(this.doDummyJson)
-          .catch(() => this.doDummyError("200 response is not JSON"));
-    } else if (res.status === 400) {
-      res.text().then(this.doDummyError)
-          .catch(() => this.doDummyError("400 response is not text"));
-    } else {
-      this.doDummyError(`bad stauts code ${res.status}`);
-    }
-  };
 
-  doDummyJson = (data: unknown): void => {
-    if (!isRecord(data)) {
-      console.error("200 response is not a record", data);
+
+  ////// CALLBACKS
+  doRedirectToCurrPollClick = (pollQuestionName: string): void => {
+    if (pollQuestionName === undefined || typeof pollQuestionName !== "string") {
+      console.error("doRedirectToCurrPollClick: Error: pollQuestionName is undefined or not of type string!")
       return;
     }
-
-    if (typeof data.msg !== "string") {
-      console.error("'msg' field of 200 response is not a string", data.msg);
-      return;
-    }
-
-    this.setState({msg: data.msg});
-  }
-
-  doDummyError = (msg: string): void => {
-    console.error(`Error fetching /api/dummy: ${msg}`);
-  };
-
+    this.setState({currPage: {kind: "ViewCurrentPollPage", pollQuestionName: pollQuestionName}});
+  }; 
 }
+
