@@ -8,7 +8,6 @@ Professor Starter-code:
 My contributions: 
 - CLIENT: Completely functional Polling with PollsApp.tsx as Parent component and NewPollPage.tsx, ViewCurrentPollPage.tsx, ViewPollListPage.tsx as children components. Child components are displayed based on state management of PollsApp.tsx's currPage variable that changes due to Events
 - SERVER: Completely functional Express based server with custom API's such as getPollList, add, getPollFromName, and recordVote that is RIGOUROUSLY unit-tested (400 lines of testing) in routes_test.ts from routes.ts
-   - Test indent TODO: Delete
 
 ## Description
 This is a basic "Live Poll client-server website" that displays real-time polls that users can vote on
@@ -18,10 +17,11 @@ This is a basic "Live Poll client-server website" that displays real-time polls 
 ![alt text][NewPollImg2]<br/>
 ![alt text][PollListPageImg]<br/>
 
-[ClosedPollImg]: https://github.com/Leonshekre/Live-Poll/tree/main/client/src/LivePoll_ExampleImages/ClosedPoll.png "Closed Poll Img"
-[NewPollImg1]: https://github.com/Leonshekre/Live-Poll/tree/main/client/src/LivePoll_ExampleImages/NewPoll_AboutToCreatePoll.png "New Poll Img 1"
-[NewPollImg2]: https://github.com/Leonshekre/Live-Poll/tree/main/client/src/LivePoll_ExampleImages/NewPoll_CreatedPoll.png "New Poll Img 2"
-[PollListPageImg]: https://github.com/Leonshekre/Live-Poll/tree/main/client/src/LivePoll_ExampleImages/PollListPage_Examples.png "Poll List Page Img"
+
+[ClosedPollImg]: https://github.com/Leonshekre/Live-Poll/blob/main/client/src/LivePoll_ExampleImages/ClosedPoll.png "Closed Poll Img"
+[NewPollImg1]: https://github.com/Leonshekre/Live-Poll/blob/main/client/src/LivePoll_ExampleImages/NewPoll_AboutToCreatePoll.png "New Poll Img 1"
+[NewPollImg2]: https://github.com/Leonshekre/Live-Poll/blob/main/client/src/LivePoll_ExampleImages/NewPoll_CreatedPoll.png "New Poll Img 2"
+[PollListPageImg]: https://github.com/Leonshekre/Live-Poll/blob/main/client/src/LivePoll_ExampleImages/PollListPage_Examples.png "Poll List Page Img"
 
 ## Prerequisites & Project Structure
 1. Node.js (LTS version recommended)
@@ -36,11 +36,11 @@ CLIENT: Uses React framework with TypeScript language
 ### Installing & Executing program
 You need 2 terminals, one to start the server & another for the client
 1. git clone https://github.com/Leonshekre/Live-Poll.git
-SERVER TERMINAL
+- SERVER TERMINAL
 1. cd HW-POLLS/server
 2. npm run build  // (runs 'tsc --build tsconfig.json' in script)
 3. npm run server  // server starts listening
-CLIENT TERMINAL
+- CLIENT TERMINAL
 1. cd HW-POLLS/client
 2. npm run start
 3. Click in terminal or open http://localhost:8080/ (or may be other port) after 'npm run start' command
