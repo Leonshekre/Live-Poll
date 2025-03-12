@@ -12,26 +12,26 @@ My contributions:
 ## Description
 This is a basic "Live Poll client-server website" that displays REAL-TIME polls that users can vote on<br/>
 
-### 1
+### 1)
 Users start on the page below. There are 2 pre-determined polls in progress and ordered
 by time as shown.<br/>
 If the user clicks on "NEW POLL" then they are taken too...<br/>
 ![alt text][PollListPageImg]<br/>
 
-### 2
+### 2)
 ... the New Poll page<br/>
 Here, we can make a new poll based on the inputs below and then press create to go to...<br/>
-[alt text][NewpollImg1]<br/>
+![alt text][NewpollImg1]<br/>
 
-### 3
+### 3)
 ... the created poll<br/>
 This shows in REAL-TIME when the poll is going to close.<br/>
 It also allows a user to vote on only 1 option alongside their name<br/>
-[alt text][NewPollImg2]<br/>
+![alt text][NewPollImg2]<br/>
 
-### 4
+### 4)
 Once the created poll is closed, you can see the results of the poll<br/>
-[alt text][ClosedPollImg]<br/>
+![alt text][ClosedPollImg]<br/>
 
 
 
