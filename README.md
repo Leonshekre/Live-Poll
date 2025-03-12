@@ -10,25 +10,25 @@ My contributions:
 - SERVER: Completely functional Express based server with custom API's such as getPollList, add, getPollFromName, and recordVote that is RIGOUROUSLY unit-tested (400 lines of testing) in routes_test.ts from routes.ts
 
 ## Description
-This is a basic "Live Poll client-server website" that displays REAL-TIME polls that users can vote on
+This is a basic "Live Poll client-server website" that displays REAL-TIME polls that users can vote on<br/>
 
 Users start on the page below. There are 2 pre-determined polls in progress and ordered
-by time as shown.
-If the user clicks on "NEW POLL" then they are taken too...
-![alt text][PollListPageImg]
+by time as shown.<br/>
+If the user clicks on "NEW POLL" then they are taken too...<br/>
+![alt text][PollListPageImg]<br/>
 
 
-<br/>... the New Poll page
-Here, we can make a new poll based on the inputs below and then press create to go to...
-![alt text][NewpollImg1]
+... the New Poll page<br/>
+Here, we can make a new poll based on the inputs below and then press create to go to...<br/>
+![alt text][NewpollImg1]<br/>
 
-<br/>... the created poll
-This shows in REAL-TIME when the poll is going to close.
-It also allows a user to vote on only 1 option alongside their name
-![alt text][NewPollImg2]
+... the created poll<br/>
+This shows in REAL-TIME when the poll is going to close.<br/>
+It also allows a user to vote on only 1 option alongside their name<br/>
+![alt text][NewPollImg2]<br/>
 
-<br/>Once the created poll is closed, you can see the results of the poll
-![alt text][ClosedPollImg]
+Once the created poll is closed, you can see the results of the poll<br/>
+![alt text][ClosedPollImg]<br/>
 
 
 
