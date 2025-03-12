@@ -3,17 +3,25 @@ Live-poll client-server communication project
 
 Professor Starter-code: 
 - CLIENT: Skeleton of PollsApp with dummy API error checking functions
-- SERVER: Skeleton of Express.js set up with a "dummy" API endpoint + Skeleton of 
+- SERVER: Skeleton of Express.js set up with a "dummy" API endpoint
+
 My contributions: 
 - CLIENT: Completely functional Polling with PollsApp.tsx as Parent component and NewPollPage.tsx, ViewCurrentPollPage.tsx, ViewPollListPage.tsx as children components. Child components are displayed based on state management of PollsApp.tsx's currPage variable that changes due to Events
 - SERVER: Completely functional Express based server with custom API's such as getPollList, add, getPollFromName, and recordVote that is RIGOUROUSLY unit-tested (400 lines of testing) in routes_test.ts from routes.ts
+   - Test indent TODO: Delete
 
 ## Description
 This is a basic "Live Poll client-server website" that displays real-time polls that users can vote on
 ... TODO: paste images here
-![alt text][img1]
+![alt text][ClosedPollImg]<br/>
+![alt text][NewPollImg1]<br/>
+![alt text][NewPollImg2]<br/>
+![alt text][PollListPageImg]<br/>
 
-[img1]: 
+[ClosedPollImg]: https://github.com/Leonshekre/Live-Poll/tree/main/client/src/LivePoll_ExampleImages/ClosedPoll.png "Closed Poll Img"
+[NewPollImg1]: https://github.com/Leonshekre/Live-Poll/tree/main/client/src/LivePoll_ExampleImages/NewPoll_AboutToCreatePoll.png "New Poll Img 1"
+[NewPollImg2]: https://github.com/Leonshekre/Live-Poll/tree/main/client/src/LivePoll_ExampleImages/NewPoll_CreatedPoll.png "New Poll Img 2"
+[PollListPageImg]: https://github.com/Leonshekre/Live-Poll/tree/main/client/src/LivePoll_ExampleImages/PollListPage_Examples.png "Poll List Page Img"
 
 ## Prerequisites & Project Structure
 1. Node.js (LTS version recommended)
