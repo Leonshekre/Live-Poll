@@ -1,13 +1,4 @@
 # Live-poll client-server communication website
-Live-poll client-server communication project
-
-Professor Starter-code: 
-- CLIENT: Skeleton of PollsApp with dummy API error checking functions
-- SERVER: Skeleton of Express.js set up with a "dummy" API endpoint
-
-My contributions: 
-- CLIENT: Completely functional Polling with PollsApp.tsx as Parent component and NewPollPage.tsx, ViewCurrentPollPage.tsx, ViewPollListPage.tsx as children components. Child components are displayed based on state management of PollsApp.tsx's currPage variable that changes due to Events
-- SERVER: Completely functional Express based server with custom API's such as getPollList, add, getPollFromName, and recordVote that is RIGOUROUSLY unit-tested (400 lines of testing) in routes_test.ts from routes.ts
 
 ## Description
 This is a basic "Live Poll client-server website" that displays REAL-TIME polls that users can vote on<br/>
@@ -69,4 +60,16 @@ You need 2 terminals, one to start the server & another for the client
 ## Authors
 1. Student Leonardo Paredes (leitoparal@gmail.com)
 2. Professor Kevin Zatloukal (starter code provided, DO NOT CONTACT)
+
+## Author Contributions
+My contributions: 
+- CLIENT: Completely functional Polling with PollsApp.tsx as Parent component and NewPollPage.tsx, ViewCurrentPollPage.tsx, ViewPollListPage.tsx as children components. Child components are displayed based on state management of PollsApp.tsx's currPage variable that changes due to Events
+- SERVER: Completely functional Express based server with custom API's such as getPollList, add, getPollFromName, and recordVote that is RIGOUROUSLY unit-tested (400 lines of testing) in routes_test.ts from routes.ts
+
+Professor Starter-code: 
+- CLIENT: Skeleton of PollsApp with dummy API error checking functions
+- SERVER: Skeleton of Express.js set up with a "dummy" API endpoint
+
+
+
 
